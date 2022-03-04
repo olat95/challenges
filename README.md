@@ -14,9 +14,9 @@ The expected deliverable is a fully functional project that includes the followi
 
 ## Technical Stack
 The application should use one of the following stacks:
-
-React or VueJS with any of Material/ChakraUI/Reactstrap/Tailwind UI Libraries
-
+```
+React or VueJS with any of Material/ChakraUI/Reactstrap/Tailwind UI Libraries  
+```
 * Using SSG/SSR such NextJS, Nuxt, Gatsby is a plus.
 * CSS Library such as 
 
@@ -26,16 +26,18 @@ Except for these requirements, feel free to use whichever libraries, frameworks 
 This challenge requires HTTP API calls when a user loads the fetch posts, views a single posts and creates a comment.
 
 What we recommend is to implement the calls as standard HTTP requests to a REST API with the following specification:
-
-* GET: To fetch all posts
+```
+ GET: To fetch all posts
   https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/
-
-* GET: To fetch a particular post
+```
+```
+GET: To fetch a particular post
   https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/{id}
-
-* POST: To comment on a post
+```
+```
+POST: To comment on a post
   https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/{id}
-
+```
 
 ## Expectations
 Your code will be reviewed by our team at B+B and will serve as the base for a discussion in interviews.
@@ -58,9 +60,9 @@ The application is composed of two major views.
 
 1. The Landing Page - Shows all blog posts by category
 2. A Single Blog - Shows a single blog post, with form for user to submit their comments and list of comments on the post
-
+```
 See the mockups here https://www.figma.com/file/mznMhyPC5AHJ4sIyNQwzqd/Everyday-News?node-id=0%3A1
-
+```
 
 ## Review session
 After receiving your code challenge, we organize a review session with you and a few engineers from B+B. During the review session, we will:
