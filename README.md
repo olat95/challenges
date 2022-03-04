@@ -53,10 +53,13 @@ Seeks to see how you transform UI Designs to Responsive, Functional and User-fri
 
 
 ## Product specification
-The application is composed of two views.
+The application is composed of two major views.
+
 
 1. The Landing Page - Shows all blog posts by category
 2. A Single Blog - Shows a single blog post, with form for user to submit their comments and list of comments on the post
+
+See the mockups here https://www.figma.com/file/mznMhyPC5AHJ4sIyNQwzqd/Everyday-News?node-id=0%3A1
 
 
 ## Review session
