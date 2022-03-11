@@ -17,8 +17,6 @@ The application should use one of the following stacks:
 ```
 React or VueJS with any of Material/ChakraUI/Reactstrap/Tailwind UI Libraries  
 ```
-* Using SSG/SSR such NextJS, Nuxt, Gatsby is a plus.
-* CSS Library such as 
 
 Except for these requirements, feel free to use whichever libraries, frameworks  or tools you deem necessary.
 
