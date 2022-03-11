@@ -15,7 +15,7 @@ The expected deliverable is a fully functional project that includes the followi
 ## Technical Stack
 The application should use one of the following stacks:
 ```
-React or VueJS with any of Material/ChakraUI/Reactstrap/Tailwind UI Libraries  
+React or VueJS with any UI/CSS Libraries such as Material/ChakraUI/Reactstrap/Tailwind etc 
 ```
 
 Except for these requirements, feel free to use whichever libraries, frameworks  or tools you deem necessary.
