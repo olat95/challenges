@@ -1,77 +1,70 @@
-# Frontend Engineering Challenge
- 
-This challenge is used by B+B for evaluating candidates for frontend development positions.
+# Getting Started with Create React App
 
-This challenge is a chance for engineers at B+B to see how you code and organize a project to implement a specification.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Deliverables
-The expected deliverable is a fully functional project that includes the following:
+## Available Scripts
 
-* Code of the application
-* Tests of the application
-* Documentation for launching a development environment and running the application
-* You are expected to match the mockups and use the right components as needed.
+In the project directory, you can run:
 
-## Technical Stack
-The application should use one of the following stacks:
-```
-React or VueJS with any UI/CSS Libraries such as Material/ChakraUI/Reactstrap/Tailwind etc 
-```
+### `npm start`
 
-Except for these requirements, feel free to use whichever libraries, frameworks  or tools you deem necessary.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### HTTP API calls
-This challenge requires HTTP API calls when a user loads the fetch posts, views a single posts and creates a comment.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-What we recommend is to implement the calls as standard HTTP requests to a REST API with the following specification:
-```
- GET: To fetch all posts
-  https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/
-```
-```
-GET: To fetch a particular post
-  https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/{id}
-```
-```
-POST: To comment on a post
-  https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/{id}
-```
+### `npm test`
 
-## Expectations
-Your code will be reviewed by our team at B+B and will serve as the base for a discussion in interviews.
-We want to see how you approach working on a complete project and strongly recommend that you work on this challenge alone. 
-We will particularly focus on your attention to details and expect the code to be professionally structured, commented, documented, and tested.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-If anything is unclear, feel free to ask any question that might help you understand the specifications or requirements better.
+### `npm run build`
 
-## Delivery
-Your application can be sent to us as a GitHub repository (in which case you are welcome to fork this repository) or as a compressed archive containing all the deliverables.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## The challenge
-Seeks to see how you transform UI Designs to Responsive, Functional and User-friendly App. In this case we use a simple blog using WordPress as Backend
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-## Product specification
-The application is composed of two major views.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-1. The Landing Page - Shows all blog posts by category
-2. A Single Blog - Shows a single blog post, with form for user to submit their comments and list of comments on the post
-```
-See the mockups here https://www.figma.com/file/mznMhyPC5AHJ4sIyNQwzqd/Everyday-News?node-id=0%3A1
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Review session
-After receiving your code challenge, we organize a review session with you and a few engineers from B+B. During the review session, we will:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-* Ask you to share you screen and do a quick demo of the app you built
-* Ask you to present your project structure and walk us through the code (the different components, the state management, etc.)
-* Ask you general technical questions related to your project and frontend architecture
-* A few examples of the topic that we like to discuss in more details:
-   Scaling of an SPA
-   Smart/dumb components
-   UI libraries
-   State management
-   Styling
-   Testing
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
