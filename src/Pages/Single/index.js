@@ -1,6 +1,6 @@
 import React from 'react'
-import PostImg from '../../../images/Rectangle 49.svg'
-import Gallaryy from '../../Gallaryy'
+import PostImg from '../../images/Rectangle 49.svg'
+import Gallaryy from '../../components/Gallaryy'
 import {
   CalenderIcon,
   CommentSection,
@@ -68,7 +68,7 @@ const SinglePost = () => {
           <CalenderIcon />
           <ImgDetailsText>1 March 2022</ImgDetailsText>
           <TimeIcon />
-          <ImgDetailsText>6mins Read</ImgDetailsText>
+          <ImgDetailsText>6 mins Read</ImgDetailsText>
         </SPimgdetails>
         <SPDescription>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae

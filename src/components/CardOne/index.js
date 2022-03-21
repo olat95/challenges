@@ -1,4 +1,5 @@
 import React from 'react'
+import { imageCards } from '../../data'
 import CardThree from '../CardThree'
 import {
   Arrow,
@@ -9,7 +10,7 @@ import {
   TitleWrapper,
 } from './COneElement'
 
-const CardOne = ({ posts }) => {
+const CardOne = () => {
   return (
     <Container>
       <TitleWrapper>
@@ -20,8 +21,14 @@ const CardOne = ({ posts }) => {
         </TitleLink>
       </TitleWrapper>
       <ImageWrapper>
-        {posts.map((id, p) => (
-          <CardThree key={id} post={p} />
+        {imageCards.map((items) => (
+          <CardThree
+            key={items.id}
+            img={items.img}
+            subtitle={items.subtitle}
+            desc={items.desc}
+            // items={items}
+          />
         ))}
       </ImageWrapper>
     </Container>

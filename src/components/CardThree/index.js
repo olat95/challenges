@@ -1,5 +1,6 @@
 import React from 'react'
-import FirstImg from '../../images/Rectangle 5 (1).svg'
+// import imageCards from '../../data'
+// import FirstImg from '../../images/Rectangle 5 (1).svg'
 import {
   CardDate,
   CardDesc,
@@ -10,14 +11,14 @@ import {
   Wrapper,
 } from './CThreeElement'
 
-const CardThree = ({ post }) => {
+const CardThree = ({ img, subtitle, desc }) => {
   return (
     <Container>
       <Wrapper>
-        <CardImage src={FirstImg} alt='' />
+        <CardImage src={img} alt='' />
         <CardInfo>
-          <CardSubTitle>{post.title}</CardSubTitle>
-          <CardDesc>{post.content}</CardDesc>
+          <CardSubTitle>{subtitle}</CardSubTitle>
+          <CardDesc>{desc}</CardDesc>
           <CardDate>1 hour ago</CardDate>
         </CardInfo>
       </Wrapper>
