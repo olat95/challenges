@@ -1,5 +1,4 @@
-import React from 'react'
-import PostImg from '../../images/Rectangle 49.svg'
+import React, { useEffect, useState } from 'react'
 import Gallaryy from '../../components/Gallaryy'
 import {
   CalenderIcon,
@@ -20,7 +19,6 @@ import {
   MessageIcon,
   RCTitle,
   RCWrapper,
-  SecondComment,
   ShareWrapper,
   SPDescription,
   SPimage,
@@ -43,24 +41,60 @@ import {
   TSTitle,
   TCGallaryWrapper,
   JDForm,
+  SPIcon,
 } from './SingleElement'
+import axios from 'axios'
+import DOMPurify from 'dompurify'
+import { useParams } from 'react-router-dom'
 
 const SinglePost = () => {
+  const [singlePost, setSinglePost] = useState([])
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+  const { postId } = useParams()
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const response = await axios.get(
+        `https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/${postId}`
+      )
+      setSinglePost(response.data)
+    }
+    fetchPost()
+  }, [postId])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    message &&
+      (await axios.post(
+        `https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/${postId}`,
+        {
+          name,
+          email,
+          message,
+        }
+      ))
+    setName('')
+    setEmail('')
+    setMessage('')
+  }
+
   return (
     <Container>
       <Wrapper>
-        <SPtitle>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae
-          iaculis nisi.
-        </SPtitle>
+        <SPtitle>{singlePost?.title?.rendered}</SPtitle>
         <ShareWrapper>
           <SWtext>Share This Post:</SWtext>
-          <FacebookIcon />
-          <TwitterIcon />
-          <WhatsAppIcon />
-          <LinkedInIcon />
+          <SPIcon>
+            <FacebookIcon />
+            <TwitterIcon />
+            <WhatsAppIcon />
+            <LinkedInIcon />
+          </SPIcon>
         </ShareWrapper>
-        <SPimage src={PostImg} alt='post' />
+        <SPimage src={singlePost?.jetpack_featured_media_url} alt='post' />
         <SPimgdesc>Financial Writer</SPimgdesc>
         <SPimgdetails>
           <ContactIcon />
@@ -70,29 +104,11 @@ const SinglePost = () => {
           <TimeIcon />
           <ImgDetailsText>6 mins Read</ImgDetailsText>
         </SPimgdetails>
-        <SPDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae
-          iaculis nisi. Praesent varius diam nisi, sit amet mollis dolor
-          pharetra sit amet. Suspendisse porttitor viverra nunc nec ultrices.
-          Nam venenatis quis massa at tempus. Suspendisse pretium metus magna,
-          et interdum dolor gravida luctus. Fusce maximus nisi eros, eu
-          malesuada ipsum ultrices vel. Nam in mi finibus, venenatis nisi
-          tempor, feugiat massa.
-          <br /> Quisque elementum, mi vel sodales luctus, est nunc egestas
-          tortor, eget accumsan sapien lorem vitae erat. Curabitur a ex iaculis,
-          posuere lorem at, varius urna. Nam iaculis viverra eros porta
-          fringilla. Nulla vulputate, orci eu convallis rutrum, metus felis
-          euismod quam, quis faucibus mauris dolor eget quam. Proin facilisis
-          erat nunc, quis placerat erat tempor ut. Vestibulum fermentum a ligula
-          id faucibus.
-          <br /> Pellentesque maximus ipsum nunc, eleifend congue nisl faucibus
-          ut. Nulla ultricies augue ut viverra congue. Maecenas arcu metus,
-          posuere sed orci ut, convallis viverra eros. Proin in neque nisi.
-          Proin eu nunc fringilla, dapibus nisi nec, pretium felis. Sed aliquam
-          dui est, auctor egestas turpis dictum a. Donec placerat eu orci eget
-          cursus. Mauris sodales iaculis mauris et feugiat. In aliquam mi
-          lacinia massa egestas rutrum.
-        </SPDescription>
+        <SPDescription
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(singlePost?.content?.rendered),
+          }}
+        ></SPDescription>
         <RCWrapper>
           <RCTitle>Reader Comments</RCTitle>
           <CommentSection>
@@ -113,7 +129,7 @@ const SinglePost = () => {
                 </COptionIcon>
               </COptions>
             </FirstComment>
-            <SecondComment>
+            <FirstComment>
               <CPost>
                 Fusce bibendum fringilla nunc vitae condimentum. Vivamus ante
                 velit, fermentum id mattis sed, venenatis eu nulla. Proin lacus
@@ -129,21 +145,35 @@ const SinglePost = () => {
                   <CReply>Reply Comment</CReply>
                 </COptionIcon>
               </COptions>
-            </SecondComment>
+            </FirstComment>
 
             <JoinDiscussionContainer>
               <JDText>Join the discussion</JDText>
-              <JDForm>
+              <JDForm onSubmit={handleSubmit}>
                 <JDTextarea
                   row='5'
                   placeholder='Write your comment'
                   name='user_message'
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
                 <JDInputField>
                   <JDLabel>Your Name:</JDLabel>
-                  <JDInput type='text' placeholder='' name='user_name' />
+                  <JDInput
+                    type='text'
+                    placeholder=''
+                    name='user_name'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
                   <JDLabel>Email Address:</JDLabel>
-                  <JDInput type='email' placeholder='' name='email' />
+                  <JDInput
+                    type='email'
+                    placeholder=''
+                    name='email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </JDInputField>
                 <JDButton>Submit</JDButton>
               </JDForm>

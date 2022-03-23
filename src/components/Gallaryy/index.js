@@ -1,14 +1,31 @@
-import React from 'react'
-import { SPphotoCards } from '../../data'
-import CardThree from '../CardThree'
+import React, { useEffect, useState } from 'react'
+// import { SPphotoCards } from '../../data'
+import axios from 'axios'
+import BlogPost from '../BlogPost'
 import { Container, Wrapper } from './GallaryElement'
 
 const Gallaryy = () => {
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const response = await axios.get(
+        'https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/'
+      )
+      setPosts(response.data)
+    }
+    fetchPost()
+  }, [])
+
   return (
     <Container>
       <Wrapper>
-        {SPphotoCards.map((item) => (
-          <CardThree key={item.id} img={item.img} desc={item.desc} />
+        {posts.map((item) => (
+          <BlogPost
+            key={item.id}
+            img={item?.jetpack_featured_media_url}
+            desc={item?.excerpt?.rendered}
+          />
         ))}
       </Wrapper>
     </Container>

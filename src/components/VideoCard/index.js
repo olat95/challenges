@@ -2,13 +2,11 @@ import React from 'react'
 import {
   Arrow,
   Container,
+  Desc,
   Left,
-  LeftDesc,
-  LeftSubtitle,
   Right,
-  RightDesc,
-  RightSubtitle,
   RightVideo,
+  Subtitle,
   TitleLink,
   TitleName,
   TitleWrapper,
@@ -35,37 +33,31 @@ const VideoCard = () => {
       <WrapperCard>
         <Left>
           <VideoBgLeft loop muted controls src={Video1} type='video/mp4' />
-          <LeftSubtitle>
-            Donec consequat ipsum ut pretium ullamcorper.
-          </LeftSubtitle>
-          <LeftDesc>
+          <Subtitle>Donec consequat ipsum ut pretium ullamcorper.</Subtitle>
+          <Desc>
             Nulla quis egestas ipsum. Quisque in mattis lacus. Sed fermentum
             magna vitae ante posuere, sit amet posuere libero egestas.
-          </LeftDesc>
+          </Desc>
         </Left>
         <Right>
           <RightVideo>
             <VideoBgRight loop muted controls src={Video2} type='video/mp4' />
             <Wrapper>
-              <RightSubtitle>
-                Donec consequat ipsum ut pretium ullamcorper.
-              </RightSubtitle>
-              <RightDesc>
+              <Subtitle>Donec consequat ipsum ut pretium ullamcorper.</Subtitle>
+              <Desc>
                 Nulla quis egestas ipsum. Quisque in mattis lacus. Sed fermentum
                 magna vitae ante posuere, sit amet posuere libero egestas.
-              </RightDesc>
+              </Desc>
             </Wrapper>
           </RightVideo>
           <RightVideo>
-            <VideoBgRightt loop muted controls src={Video3} type='video/mp4' />
+            <VideoBgRight loop muted controls src={Video3} type='video/mp4' />
             <Wrapper>
-              <RightSubtitle>
-                Donec consequat ipsum ut pretium ullamcorper.
-              </RightSubtitle>
-              <RightDesc>
+              <Subtitle>Donec consequat ipsum ut pretium ullamcorper.</Subtitle>
+              <Desc>
                 Nulla quis egestas ipsum. Quisque in mattis lacus. Sed fermentum
                 magna vitae ante posuere, sit amet posuere libero egestas.
-              </RightDesc>
+              </Desc>
             </Wrapper>
           </RightVideo>
         </Right>
