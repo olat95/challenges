@@ -1,14 +1,14 @@
 import React from 'react'
 import Logo from '../../images/logo.svg'
-import { Container, LogoImage, Title, Wrapper } from './TopbarElement'
+import { Container, LogoImage, LogoLink, Title } from './TopbarElement'
 
 const Topbar = () => {
   return (
     <Container>
-      <Wrapper>
+      <LogoLink to='/'>
         <LogoImage src={Logo} alt='logo' />
         <Title>Everyday News</Title>
-      </Wrapper>
+      </LogoLink>
     </Container>
   )
 }

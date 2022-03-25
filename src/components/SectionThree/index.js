@@ -1,5 +1,5 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useAxiosGet } from '../../Hooks/useAxios'
 import BlogPost from '../BlogPost'
 import { PostLink } from '../SectionOne/SOneElement'
 
@@ -13,19 +13,9 @@ import {
 } from './SThreeElement'
 
 const SectionThree = () => {
-  const [posts, setPosts] = useState([])
-
-  //useeffect is for making side effects e.g making calls to external api. the goalis to make our component as pure as possible
-  useEffect(() => {
-    const fetchPost = async () => {
-      const response = await axios.get(
-        'https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/'
-      )
-      setPosts(response.data)
-    }
-    fetchPost()
-  }, [])
-  console.log(posts)
+  const { posts } = useAxiosGet(
+    'https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/'
+  )
 
   return (
     <Container>

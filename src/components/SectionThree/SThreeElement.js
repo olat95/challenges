@@ -33,21 +33,9 @@ export const Arrow = styled(ArrowForward)`
 export const PhotoWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  overflow: hidden;
-  animation: scroll 40s linear infinite;
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-  }
+  overflow-x: auto;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
 `
-// export const Container = styled.div``
-// export const Container = styled.div``
-// export const Container = styled.div``
-// export const Container = styled.div``
-// export const Container = styled.div``

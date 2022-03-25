@@ -37,10 +37,6 @@ export const ShareWrapper = styled.div`
   display: flex;
   align-items: center;
   margin: 10px 0;
-
-  @media screen and (max-width: 768px) {
-    ${'' /* flex-direction: column; */}
-  }
 `
 export const SWtext = styled.h3`
   color: #acacac;
@@ -363,6 +359,6 @@ export const TSTitle = styled.h1`
 export const TCGallaryWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+  overflow-x: auto;
   background-color: rgba(245, 245, 245, 0.6);
 `

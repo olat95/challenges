@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Gallaryy from '../../components/Gallaryy'
 import {
   CalenderIcon,
@@ -43,43 +43,57 @@ import {
   JDForm,
   SPIcon,
 } from './SingleElement'
-import axios from 'axios'
 import DOMPurify from 'dompurify'
 import { useParams } from 'react-router-dom'
+import { UseAxiosGetById } from '../../Hooks/useAxios'
 
 const SinglePost = () => {
-  const [singlePost, setSinglePost] = useState([])
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-
   const { postId } = useParams()
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      const response = await axios.get(
-        `https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/${postId}`
-      )
-      setSinglePost(response.data)
-    }
-    fetchPost()
-  }, [postId])
+  const {
+    singlePost,
+    handleSubmit,
+    name,
+    email,
+    message,
+    setName,
+    setEmail,
+    setMessage,
+  } = UseAxiosGetById(
+    `https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/${postId}`
+  )
+  // const [singlePost, setSinglePost] = useState([])
+  // const [name, setName] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [message, setMessage] = useState('')
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    message &&
-      (await axios.post(
-        `https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/${postId}`,
-        {
-          name,
-          email,
-          message,
-        }
-      ))
-    setName('')
-    setEmail('')
-    setMessage('')
-  }
+  // const { postId } = useParams()
+
+  // useEffect(() => {
+  //   const fetchPost = async () => {
+  //     const response = await axios.get(
+  //       `https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/${postId}`
+  //     )
+  //     setSinglePost(response.data)
+  //   }
+  //   fetchPost()
+  // }, [postId])
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   message &&
+  //     (await axios.post(
+  //       `https://brooksandblake.com/blogapis/wp-json/wp/v2/posts/${postId}`,
+  //       {
+  //         name,
+  //         email,
+  //         message,
+  //       }
+  //     ))
+  //   setName('')
+  //   setEmail('')
+  //   setMessage('')
+  // }
 
   return (
     <Container>

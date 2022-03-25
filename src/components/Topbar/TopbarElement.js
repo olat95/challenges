@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as LinkRoute } from 'react-router-dom'
 
 export const Container = styled.div`
   width: 100%;
@@ -9,10 +10,14 @@ export const Container = styled.div`
   top: 0;
   z-index: 999;
 `
-export const Wrapper = styled.div`
+export const LogoLink = styled(LinkRoute)`
   display: flex;
   align-items: center;
   padding: 20px;
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
 `
 export const LogoImage = styled.img`
   padding-left: 50px;

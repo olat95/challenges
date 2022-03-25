@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import { SPphotoCards } from '../../data'
 import axios from 'axios'
 import BlogPost from '../BlogPost'
 import { Container, Wrapper } from './GallaryElement'

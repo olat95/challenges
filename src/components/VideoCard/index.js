@@ -12,7 +12,6 @@ import {
   TitleWrapper,
   VideoBgLeft,
   VideoBgRight,
-  VideoBgRightt,
   Wrapper,
   WrapperCard,
 } from './VcardElement'
